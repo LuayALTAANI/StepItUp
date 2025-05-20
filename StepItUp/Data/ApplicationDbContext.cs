@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using StepItUp.Models;
 
 namespace StepItUp.Data
 {
@@ -9,5 +10,6 @@ namespace StepItUp.Data
             : base(options)
         {
         }
+        public DbSet<StepItUp.Models.Product> Product { get; set; } = default!;
     }
 }
