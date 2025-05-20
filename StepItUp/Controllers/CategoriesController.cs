@@ -7,7 +7,7 @@ namespace StepItUp.Controllers
 	{
 		public IActionResult Index()
 		{
-			// creeat a mock up categories list and pass it to the view
+			//creeat a mock up categories list and pass it to the view
 
 		 List<Category> categories = new List<Category>();
 
