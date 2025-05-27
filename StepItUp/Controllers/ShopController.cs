@@ -1,21 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StepItUp.Data;
 using StepItUp.Models;
 
 namespace StepItUp.Controllers
 {
 	public class ShopController : Controller
 	{
+		private readonly ApplicationDbContext _context; 
+		
+		public ShopController(ApplicationDbContext context)
+		{
+			_context = context;
+		}
 		public IActionResult Index()
 		{
-			// creeat a mock up categories list and pass it to the view
-
-			List<Category> categories = new List<Category>();
-
-			//populate mock p list
-			for (int i = 1; i < 11; i++)
-			{
-				categories.Add(new Category { CategoriesId = i, Name = "name "+i });
-			}
+			var categories = _context.Category.OrderBy(x => x.Name).ToList();
 			return View(categories);
 		}
 

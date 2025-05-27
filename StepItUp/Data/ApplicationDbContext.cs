@@ -11,5 +11,6 @@ namespace StepItUp.Data
         {
         }
         public DbSet<StepItUp.Models.Product> Product { get; set; } = default!;
-    }
+		public DbSet<StepItUp.Models.Category> Category { get; set; } = default!;
+	}
 }
